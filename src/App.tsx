@@ -61,6 +61,7 @@ function App(): JSX.Element {
                   onChange={(e) => setNewTask(e.target.value)}
                   value={newTask}
                   ref={taskInput}
+                  placeholder="Title of the task"
                 />
                 <input
                   className="form-control mt-2"
@@ -68,6 +69,7 @@ function App(): JSX.Element {
                   onChange={(e) => setNewTaskDesc(e.target.value)}
                   value={newTaskDesc}
                   ref={taskInput}
+                  placeholder="Description of the task"
                 />
                 <button className="btn btn-success col-12 mt-4">Save</button>
               </form>
