@@ -33,11 +33,12 @@ function App(): JSX.Element {
     setTasks(newTasks);
   };
   return (
-    <div className="container p-4">
+    <div className="container p-4 mt-5">
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <div className="card">
             <div className="card-body">
+              <h2 className="p-2 text-center">To-do app</h2>
               <form onSubmit={handleSubmit}>
                 <input
                   className="form-control"
@@ -53,10 +54,10 @@ function App(): JSX.Element {
           </div>
 
           {tasks.map((t: ITask, i: number) => (
-            <div className="card card-body mt-2" key={i}>
-              <h2 style={{ textDecoration: t.done ? "line-through" : "" }}>
+            <div className="card card-body mt-2 flex flex-row justify-content-between" key={i}>
+              <h3   style={{ textDecoration: t.done ? "line-through" : "" }}>
                 {t.name}
-              </h2>
+              </h3>
               <div>
                 <button
                   className="btn btn-secondary"
@@ -65,7 +66,7 @@ function App(): JSX.Element {
                   {t.done ? "✓" : "✗"}
                 </button>
                 <button
-                  className="btn btn-danger"
+                  className="btn btn-danger  ms-3"
                   onClick={() => removeTask(i)}
                 >
                   🗑
